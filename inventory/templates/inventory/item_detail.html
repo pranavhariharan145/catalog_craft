@@ -1,0 +1,22 @@
+{% extends 'inventory/base.html' %}
+
+{% block title %}{{ item.title }} - CatalogCraft{% endblock %}
+
+{% block content %}
+    <div class="card">
+        <h2>{{ item.title }}</h2>
+        <p><strong>Category:</strong> {{ item.category }}</p>
+        <p><strong>Price:</strong> ${{ item.price }}</p>
+        <p><strong>Status:</strong> 
+            {% if item.in_stock %}
+                <span style="color: green;">In Stock</span>
+            {% else %}
+                <span style="color: red;">Out of Stock</span>
+            {% endif %}
+        </p>
+        <hr>
+        <p>{{ item.description }}</p>
+        <br>
+        <a href="{% url 'item_list' %}" class="btn">&larr; Back to Catalog</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'inventory/base.html' %}
+
+{% block title %}{{ page_title }} - CatalogCraft{% endblock %}
+
+{% block content %}
+    <h2>{{ page_title }}</h2>
+    
+    {% if items %}
+        {% for item in items %}
+            <div class="card">
+                <h3>{{ item.title }}</h3>
+                <p><strong>Category:</strong> {{ item.category }}</p>
+                <p><strong>Price:</strong> ${{ item.price }}</p>
+                <a href="{% url 'item_detail' pk=item.pk %}" class="btn">View Details</a>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No items found in the catalog.</p>
+    {% endif %}
+{% endblock %}
