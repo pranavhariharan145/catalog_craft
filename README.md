@@ -133,9 +133,3 @@ python manage.py runserver
 Open your browser and navigate to:
 - **Catalog App:** `http://127.0.0.1:8000/`
 - **Admin Portal:** `http://127.0.0.1:8000/admin/`
-
----
-
-## 📝 License
-
-This project is open-source and available under the [MIT License](LICENSE).
